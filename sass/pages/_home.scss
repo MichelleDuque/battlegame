@@ -1,8 +1,138 @@
-h2 {
-    text-align: center;
-    font-size: 44px;
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #005555;
 }
 
-#text {
-    visibility: hidden;
+#select-monster {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(200, 192, 192);
+}
+
+.title {
+    color: white;
+    font-size: 32px;
+    text-align: center;
+}
+
+.subtitle {
+    color: white;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.cards,
+.attack-cards {
+    display: flex;
+    gap: 10px;
+}
+
+.monster-card,
+.attack-button {
+    width: 180px;
+    height: 100px;
+    background: #069A8E;
+    padding: 10px;
+    box-sizing: border-box; /* Para que el padding no afecte el tamaño de la caja */
+    border-radius: 20px;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+}
+
+.monster-card img {
+    width: 80px;
+}
+
+#monster-button {
+    color: black;
+    background-color: #F7FF93;
+    width: 210px;
+    height: 45px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 40px;
+    border-radius: 20px;
+    border: 1px solid white;
+    font-family: 'Press Start 2P', cursive;
+}
+
+input {
+    display: none;
+}
+
+input:checked + label {
+    background-color: #A1E3D8;
+    border: 5px solid #069A8E;
+}
+
+#select-attack {
+    flex-direction: column;
+    align-items: center;
+}
+
+.attack-button {
+    background: #069A8E;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-color: transparent;
+    color: white;
+    width: 169px;
+    height: 49px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 17px;
+    margin-bottom: 57px;
+}
+
+#messages {
+    width: 280px;
+    background: #F7FF93;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#result {
+    font-size: 17px;
+    text-align: center;
+}
+
+#restart-button {
+    height: 50px;
+    border-radius: 20px;
+    border-color: transparent;
+    background: #069A8E;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.attacks {
+    display: grid;
+    grid-template-columns: 150px 150px;
+}
+
+.player-attacks,
+.enemy-attacks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 360px) {
+    .cards,
+    .attack-cards {
+        flex-direction: column;       
+    }
 }

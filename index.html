@@ -2,54 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monsters</title>
+    <title>MONSTERS!</title>
     <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script defer src="./js/main.js"></script>
 </head>
 <body>
-    <section id="seleccionar-mascota">
-        <h1 class="titulo">🌬️🔥 ¡THE BATTLE OF THE MONSTERS! 💧🍀</h1>
+    <section id="select-monster">
+        <h1 class="title">🌬️🔥 MONSTERS! 💧🍀</h1>
 
-        <h2 class="subtitulo">Choose your monster</h2>
+        <h2 class="subtitle">Choose your monster</h2>
 
-        <div id="contenedorTarjetas" class="tarjetas">
+        <div id="cards-container" class="cards">
             
         </div>
 
-        <button id="boton-mascota">Select</button>
+        <button id="monster-button">Select</button>
     </section>
 
-    <section id="seleccionar-ataque">
-        <h1 class="titulo">🌬️🔥 ¡THE BATTLE OF THE MONSTERS! 💧🍀</h1>
+    <section id="select-attack">
+        <h1 class="title">🌬️🔥 MONSTERS! 💧🍀</h1>
         
-        <h2 class="subtitulo">Elige tu ataque</h2>
+        <h2 class="subtitle">Choose your attack</h2>
 
-        <div class="tarjetas-ataques">
-            <button id="boton-fuego" class="boton-de-ataque">Fuego 🔥</button>
-            <button id="boton-agua" class="boton-de-ataque">Agua 💧</button>
-            <button id="boton-tierra" class="boton-de-ataque">Tierra 🍀</button>
+        <div class="attack-cards">
+            <button id="fire-button" class="attack-button">Fire 🔥</button>
+            <button id="water-button" class="attack-button">Water 💧</button>
+            <button id="earth-button" class="attack-button">Earth 🍀</button>
         </div>
 
-        <div id="mensajes">
-            <p id="resultado">Good Luck!</p>  
-            <section id="reiniciar">
-                <button id="boton-reiniciar">Start Over</button>
+        <div id="messages">
+            <p id="result">Good Luck!</p>  
+            <section id="restart">
+                <button id="restart-button">Restart</button>
             </section>    
         </div>
 
-        <div class="ataques">
-            <div class="ataques-jugador">
-                <p id="vidas-jugador">3</p>
-                <p id="mascota-jugador"></p>
-                <div id="ataques-del-jugador"></div> 
+        <div class="attacks">
+            <div class="player-attacks">
+                <p id="player-lives">3</p>
+                <p id="player-monster"></p>
+                <div id="player-attacks-list"></div> 
             </div>
-            <div class="ataques-enemigo">
-                <p id="vidas-enemigo">3</p>
-                <p id="mascota-enemigo"></p>
-                <div id="ataques-del-enemigo"></div> 
+            <div class="enemy-attacks">
+                <p id="enemy-lives">3</p>
+                <p id="enemy-monster"></p>
+                <div id="enemy-attacks-list"></div> 
             </div>   
         </div>
     </section>
-    <script src="./js/mokepon.js"></script>
 </body>
 </html>
