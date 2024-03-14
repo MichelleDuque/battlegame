@@ -1,3 +1,8 @@
+import { Monster } from "./Monster.js";
+import { random } from "./modules/randomLogic.js";
+import { selectEnemyMonster } from "./modules/selectEnemyMonster.js";
+
+
 const selectAttackSection = document.querySelector('#select-attack');
 const restartSection = document.querySelector('#restart');
 const monsterButton = document.querySelector('#monster-button');
@@ -33,14 +38,6 @@ let thunderhideInput;
 let playerLives = 3;
 let enemyLives = 3;
 
-class Monster {
-    constructor(name, image, life) {
-        this.name = name;
-        this.image = image;
-        this.life = life;
-        this.attacks = [];
-    }
-}
 
 let graveltusk = new Monster('Graveltusk', './images/Graveltusk.svg', 5);
 let dreadscale = new Monster('Dreadscale', './images/Dreadscale.svg', 5);
@@ -117,7 +114,7 @@ function startGame() {
         frostbiteInput = document.querySelector('#Frostbite');
         nightshadeInput = document.querySelector("#Nightshade");
         thunderhideInput = document.querySelector("#Thunderhide");
-        venomspineInput = document.querySelector("#VenomspineInput")
+        venomspineInput = document.querySelector("#Venomspine")
 
     });
 
@@ -148,13 +145,10 @@ function selectPlayerMonster() {
         alert('Select a monster');
     }
 
-    selectEnemyMonster();
+    selectEnemyMonster(monsters, enemyMonsterSpan);
 }
 
-function selectEnemyMonster() {
-    let randomMonster = random(0, monsters.length - 1);
-    enemyMonsterSpan.innerHTML = monsters[randomMonster].name;
-}
+
 
 function fireAttack() {
     playerAttack = 'FIRE';
@@ -243,8 +237,5 @@ function restartGame() {
     location.reload();
 }
 
-function random(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
 
 window.addEventListener('load', startGame);
