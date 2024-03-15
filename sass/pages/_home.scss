@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
-    font-family: 'Press Start 2P', cursive;
+    font-family: "Play", sans-serif;
     background-color: #005555;
+}
+
+#image-logo{
+    height: 70px;
 }
 
 #select-monster {
@@ -14,9 +18,14 @@ body {
 }
 
 .title {
-    color: white;
-    font-size: 32px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: black;
+    font-size: 30px;
     text-align: center;
+    background-color: #F7FF93;
+    width: 100%;
+    height: 100%;
 }
 
 .subtitle {
@@ -25,18 +34,29 @@ body {
     margin-top: 30px;
     margin-bottom: 40px;
     text-align: center;
+    margin-top: 60px;
+    font-weight: 900;
 }
 
 .cards,
 .attack-cards {
     display: flex;
+    flex-direction: column;   
     gap: 10px;
+}
+
+.monster-card{
+    gap: 40PX;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.051),
+    0px 0px 7.2px rgba(0, 0, 0, 0.073), 0px 0px 13.6px rgba(0, 0, 0, 0.09),
+    0px 0px 24.3px rgba(0, 0, 0, 0.107), 0px 0px 45.5px rgba(0, 0, 0, 0.129),
+    0px 0px 109px rgba(0, 0, 0, 0.18);
 }
 
 .monster-card,
 .attack-button {
-    width: 180px;
-    height: 100px;
+    width: 250px;
+    height: 130px;
     background: #069A8E;
     padding: 10px;
     box-sizing: border-box; /* Para que el padding no afecte el tamaño de la caja */
@@ -49,7 +69,13 @@ body {
 }
 
 .monster-card img {
-    width: 80px;
+    width: 100px;
+}
+
+
+.monster-card P {
+    font-size: 15px;
+    font-weight: 700;
 }
 
 #monster-button {
@@ -62,7 +88,9 @@ body {
     margin-top: 40px;
     border-radius: 20px;
     border: 1px solid white;
-    font-family: 'Press Start 2P', cursive;
+    font-family: "Play", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
 }
 
 input {
@@ -88,7 +116,7 @@ input:checked + label {
     color: white;
     width: 169px;
     height: 49px;
-    font-family: 'Press Start 2P', cursive;
+    font-family: "Play", sans-serif;
     font-size: 17px;
     margin-bottom: 57px;
 }
@@ -115,7 +143,7 @@ input:checked + label {
     border-color: transparent;
     background: #069A8E;
     color: white;
-    font-family: 'Press Start 2P', cursive;
+    font-family: "Play", sans-serif;
 }
 
 .attacks {
@@ -130,9 +158,84 @@ input:checked + label {
     align-items: center;
 }
 
-@media (max-width: 360px) {
-    .cards,
-    .attack-cards {
-        flex-direction: column;       
+@media (min-width: 768px) {
+
+    #image-logo{
+        height: 90px;
     }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px; /* Adjust as needed */
+    }
+
+    .subtitle{
+        font-size: 30px;
+    }
+
+    .monster-card{
+        width: 270px;
+        height: 145px;
+    }
+
+    .monster-card img{
+        width: 110px;
+    }
+
+    .monster-card P {
+        font-size: 17px;
+    }
+
+
+}
+
+@media (min-width: 1200px) {
+
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px; /* Adjust as needed */
+    }
+
+}
+
+
+@media (min-width: 1920px) {
+
+    #image-logo{
+        height: 120px;
+    }
+
+    .subtitle{
+        font-size: 40px;
+        margin-bottom: 70px;
+    }
+
+    .monster-card{
+        width: 300px;
+        height: 175px;
+    }
+
+    
+    #monster-button {
+        width: 230px;
+        height: 55px;
+        padding: 10px;
+        margin-top: 40px;
+
+        font-size: 27px;
+        font-weight: 800;
+    }
+
+    .monster-card img {
+        width: 130px;
+    }
+    
+    
+    .monster-card P {
+        font-size: 20px;
+    }
+
 }
