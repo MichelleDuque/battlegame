@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
-    font-family: 'Press Start 2P', cursive;
+    font-family: "Play", sans-serif;
     background-color: #005555;
+}
+
+#image-logo{
+    height: 70px;
 }
 
 #select-monster {
@@ -14,9 +18,14 @@ body {
 }
 
 .title {
-    color: white;
-    font-size: 32px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: black;
+    font-size: 30px;
     text-align: center;
+    background-color: #F7FF93;
+    width: 100%;
+    height: 100%;
 }
 
 .subtitle {
@@ -25,18 +34,29 @@ body {
     margin-top: 30px;
     margin-bottom: 40px;
     text-align: center;
+    margin-top: 60px;
+    font-weight: 900;
 }
 
 .cards,
 .attack-cards {
     display: flex;
-    gap: 10px;
+    flex-direction: column;   
+    gap: 20px;
+}
+
+.monster-card{
+    gap: 40PX;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.051),
+    0px 0px 7.2px rgba(0, 0, 0, 0.073), 0px 0px 13.6px rgba(0, 0, 0, 0.09),
+    0px 0px 24.3px rgba(0, 0, 0, 0.107), 0px 0px 45.5px rgba(0, 0, 0, 0.129),
+    0px 0px 109px rgba(0, 0, 0, 0.18);
 }
 
 .monster-card,
 .attack-button {
-    width: 180px;
-    height: 100px;
+    width: 250px;
+    height: 130px;
     background: #069A8E;
     padding: 10px;
     box-sizing: border-box; /* Para que el padding no afecte el tamaño de la caja */
@@ -46,10 +66,17 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 10px;
+    cursor: pointer;
 }
 
 .monster-card img {
-    width: 80px;
+    width: 100px;
+}
+
+
+.monster-card P {
+    font-size: 15px;
+    font-weight: 700;
 }
 
 #monster-button {
@@ -62,7 +89,10 @@ body {
     margin-top: 40px;
     border-radius: 20px;
     border: 1px solid white;
-    font-family: 'Press Start 2P', cursive;
+    font-family: "Play", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
 }
 
 input {
@@ -88,9 +118,9 @@ input:checked + label {
     color: white;
     width: 169px;
     height: 49px;
-    font-family: 'Press Start 2P', cursive;
+    font-family: "Play", sans-serif;
     font-size: 17px;
-    margin-bottom: 57px;
+    font-weight: 600;
 }
 
 #messages {
@@ -102,6 +132,17 @@ input:checked + label {
     display: flex;
     align-items: center;
     flex-direction: column;
+    font-weight: 700;
+}
+
+#player-monster, #enemy-monster, #player-lives, #enemy-lives{
+    font-weight: 700;
+    margin-top: 5px;
+    font-size: 22px;
+}
+
+#player-monster, #enemy-monster{
+    color: #F7FF93;
 }
 
 #result {
@@ -110,29 +151,157 @@ input:checked + label {
 }
 
 #restart-button {
+    margin-top: 20px;
     height: 50px;
-    border-radius: 20px;
-    border-color: transparent;
+    width: 150px;
     background: #069A8E;
     color: white;
-    font-family: 'Press Start 2P', cursive;
+    font-family: "Play", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: 1px solid white;
 }
 
 .attacks {
     display: grid;
     grid-template-columns: 150px 150px;
+    margin-bottom: 30px;
 }
 
 .player-attacks,
 .enemy-attacks {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
 }
 
-@media (max-width: 360px) {
-    .cards,
-    .attack-cards {
-        flex-direction: column;       
+
+#player-attacks-list, #enemy-attacks-list{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+#player-attacks-list p, #enemy-attacks-list p{
+    margin-top: 6px;
+    font-weight: 550;
+}
+
+
+@media (min-width: 768px) {
+
+    #image-logo{
+        height: 90px;
     }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px; /* Adjust as needed */
+    }
+
+    .subtitle{
+        font-size: 30px;
+    }
+
+    .monster-card{
+        width: 270px;
+        height: 145px;
+    }
+
+    .monster-card img{
+        width: 110px;
+    }
+
+    .monster-card P {
+        font-size: 17px;
+    }
+
+    .attack-cards {
+        display: flex;
+        flex-direction: row;   
+        gap: 30px;
+        margin-bottom: 30px;
+
+    }
+
+
+}
+
+@media (min-width: 1200px) {
+
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px; /* Adjust as needed */
+    }
+
+    .attack-cards {
+        gap: 60px;
+
+    }
+
+    .attack-button{
+        height: 70px;
+        font-size: 23px;
+    }
+
+
+    #messages{
+        width: 400px;
+    }
+
+    #result{
+        font-size: 20px;
+    }
+}
+
+
+@media (min-width: 1920px) {
+
+    #image-logo{
+        height: 120px;
+    }
+
+    .subtitle{
+        font-size: 40px;
+        margin-bottom: 70px;
+    }
+
+    .monster-card{
+        width: 300px;
+        height: 175px;
+    }
+
+    
+    #monster-button {
+        width: 230px;
+        height: 55px;
+        padding: 10px;
+        margin-top: 40px;
+
+        font-size: 27px;
+        font-weight: 800;
+    }
+
+    .monster-card img {
+        width: 130px;
+    }
+    
+    
+    .monster-card P {
+        font-size: 20px;
+    }
+
+
+    .attack-cards {
+        gap: 100px;
+    }
+
 }

@@ -43,7 +43,7 @@ let graveltusk = new Monster('Graveltusk', './images/Graveltusk.svg', 5);
 let dreadscale = new Monster('Dreadscale', './images/Dreadscale.svg', 5);
 let frostbite = new Monster('Frostbite', './images/Frostbite.svg', 5);
 let nightshade = new Monster('Nightshade', './images/Nightshade.svg', 5);
-let thunderhide= new Monster('Thunderhide', './images/Thunderhide.svg', 5);
+let thunderhide= new Monster('Thunderhide', './images/Shadowmaw.svg', 5);
 let venomspine= new Monster('Venomspine', './images/Venomspine.svg', 5);
 
 graveltusk.attacks.push(
@@ -205,9 +205,9 @@ function combat() {
 
 function checkLives() {
     if (enemyLives === 0) {
-        createFinalMessage("CONGRATULATIONS! You won :)");
+        createFinalMessage("CONGRATULATIONS! You Won!!");
     } else if (playerLives === 0) {
-        createFinalMessage('Sorry, you lost :(');
+        createFinalMessage('Sorry, You Lost');
     }
 }
 
