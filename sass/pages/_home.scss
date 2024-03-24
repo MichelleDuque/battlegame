@@ -42,7 +42,7 @@ body {
 .attack-cards {
     display: flex;
     flex-direction: column;   
-    gap: 10px;
+    gap: 20px;
 }
 
 .monster-card{
@@ -66,6 +66,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 10px;
+    cursor: pointer;
 }
 
 .monster-card img {
@@ -91,6 +92,7 @@ body {
     font-family: "Play", sans-serif;
     font-size: 20px;
     font-weight: 800;
+    cursor: pointer;
 }
 
 input {
@@ -118,7 +120,7 @@ input:checked + label {
     height: 49px;
     font-family: "Play", sans-serif;
     font-size: 17px;
-    margin-bottom: 57px;
+    font-weight: 600;
 }
 
 #messages {
@@ -130,6 +132,17 @@ input:checked + label {
     display: flex;
     align-items: center;
     flex-direction: column;
+    font-weight: 700;
+}
+
+#player-monster, #enemy-monster, #player-lives, #enemy-lives{
+    font-weight: 700;
+    margin-top: 5px;
+    font-size: 22px;
+}
+
+#player-monster, #enemy-monster{
+    color: #F7FF93;
 }
 
 #result {
@@ -138,25 +151,47 @@ input:checked + label {
 }
 
 #restart-button {
+    margin-top: 20px;
     height: 50px;
-    border-radius: 20px;
-    border-color: transparent;
+    width: 150px;
     background: #069A8E;
     color: white;
     font-family: "Play", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: 1px solid white;
 }
 
 .attacks {
     display: grid;
     grid-template-columns: 150px 150px;
+    margin-bottom: 30px;
 }
 
 .player-attacks,
 .enemy-attacks {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
 }
+
+
+#player-attacks-list, #enemy-attacks-list{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+#player-attacks-list p, #enemy-attacks-list p{
+    margin-top: 6px;
+    font-weight: 550;
+}
+
 
 @media (min-width: 768px) {
 
@@ -187,6 +222,14 @@ input:checked + label {
         font-size: 17px;
     }
 
+    .attack-cards {
+        display: flex;
+        flex-direction: row;   
+        gap: 30px;
+        margin-bottom: 30px;
+
+    }
+
 
 }
 
@@ -199,6 +242,24 @@ input:checked + label {
         gap: 20px; /* Adjust as needed */
     }
 
+    .attack-cards {
+        gap: 60px;
+
+    }
+
+    .attack-button{
+        height: 70px;
+        font-size: 23px;
+    }
+
+
+    #messages{
+        width: 400px;
+    }
+
+    #result{
+        font-size: 20px;
+    }
 }
 
 
@@ -236,6 +297,11 @@ input:checked + label {
     
     .monster-card P {
         font-size: 20px;
+    }
+
+
+    .attack-cards {
+        gap: 100px;
     }
 
 }

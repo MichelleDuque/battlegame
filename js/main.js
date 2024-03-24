@@ -205,9 +205,9 @@ function combat() {
 
 function checkLives() {
     if (enemyLives === 0) {
-        createFinalMessage("CONGRATULATIONS! You won :)");
+        createFinalMessage("CONGRATULATIONS! You Won!!");
     } else if (playerLives === 0) {
-        createFinalMessage('Sorry, you lost :(');
+        createFinalMessage('Sorry, You Lost');
     }
 }
 
